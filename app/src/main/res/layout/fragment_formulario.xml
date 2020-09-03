@@ -22,7 +22,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:layout_marginTop="15dp"
-        android:hint="¿Cantidad a pedir?" />
+        android:hint="@string/cantidad_a_pedir" />
 
     <androidx.appcompat.widget.AppCompatEditText
         android:id="@+id/et_monto_en_pesos"
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:layout_marginTop="15dp"
-        android:hint="¿Monto en pesos a invertir?"
+        android:hint="@string/monto_en_pesos_a_invertir"
         android:inputType="number" />
 
     <androidx.appcompat.widget.AppCompatEditText
@@ -65,6 +65,6 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:backgroundTint="#689F38"
-        android:text="@string/cancelar" />
+        android:text="@string/cancelar1" />
 
 </LinearLayout>

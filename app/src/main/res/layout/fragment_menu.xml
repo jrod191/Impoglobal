@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:backgroundTint="#689F38"
-        android:text="Realiza tu pedido personalizado" />
+        android:text="@string/realiza_tu_pedido_personalizado" />
 
     <Button
         android:id="@+id/btn_cancelar"
