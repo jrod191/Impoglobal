@@ -1,0 +1,24 @@
+<resources>
+
+    <string name="ingrese_email">Ingrese email</string>
+    <string name="ingrese_password">Ingrese Password</string>
+    <string name="no_cerrar_sesion">No cerrar sesion</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="crear_usuario">Crear Usuario</string>
+    <string name="ingrese_rut">Ingrese Rut</string>
+    <string name="ingrese_nombre_completo">Ingrese Nombre Completo</string>
+    <string name="ingrese_direccion">Ingrese Direccion</string>
+    <string name="ingrese_pass">Ingrese Password</string>
+    <string name="ingrese_mail">Ingrese Email</string>
+    <string name="acepto_los_terminos_y_condiciones">Acepto los Terminos y Condiciones</string>
+    <string name="crear_user">Crear usuario</string>
+    <string name="que_desea_solicitar">¿Que desea solicitar?</string>
+    <string name="caracteristicas_detalladas_del_producto">Caracteristicas detalladas del producto</string>
+    <string name="link_referencial_con_imagenes_del_producto">Link referencial con imagenes del producto</string>
+    <string name="ingresar_solicitud">Ingresar solicitud</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="revisa_nuestro_catalogo">Revisa nuestro catalogo</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="tu_solicitud_ha_sido_ingresada_con_exito">Tu solicitud ha sido ingresada con exito.</string>
+    <string name="finalizar">Finalizar</string>
+</resources>
