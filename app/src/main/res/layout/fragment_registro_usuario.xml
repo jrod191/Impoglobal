@@ -32,7 +32,7 @@
         android:hint="@string/ingrese_direccion"/>
 
     <androidx.appcompat.widget.AppCompatEditText
-        android:id="@+id/et_caracteristica"
+        android:id="@+id/et_comuna"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
@@ -72,6 +72,14 @@
         android:layout_marginTop="50dp"
         android:backgroundTint="#689F38"
         android:text="@string/crear_user" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_volver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#689F38"
+        android:text="@string/volver" />
 
 
 

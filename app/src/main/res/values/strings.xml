@@ -21,4 +21,5 @@
     <string name="cancelar">Cancelar</string>
     <string name="tu_solicitud_ha_sido_ingresada_con_exito">Tu solicitud ha sido ingresada con exito.</string>
     <string name="finalizar">Finalizar</string>
+    <string name="volver">Volver</string>
 </resources>
