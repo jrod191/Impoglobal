@@ -1,3 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph" />
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/registrarUsuarioFragment2">
+
+    <fragment
+        android:id="@+id/registrarUsuarioFragment2"
+        android:name="cl.grupo2.impoglobal.registro.ui.RegistrarUsuarioFragment"
+        android:label="RegistrarUsuarioFragment"
+        tools:layout="@layout/fragment_registro_usuario"/>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="cl.grupo2.impoglobal.autenticacion.presentation.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registrarUsuarioFragment2"
+            app:destination="@id/registrarUsuarioFragment2" />
+    </fragment>
+</navigation>
