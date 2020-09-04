@@ -2,11 +2,18 @@ package cl.grupo2.impoglobal.registro.data.remote
 
 import cl.grupo2.impoglobal.registro.domain.RegistroUsuario
 import cl.grupo2.impoglobal.registro.domain.RegistroUsuarioRepository
+import com.google.firebase.auth.AuthResult
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.UserProfileChangeRequest
+import kotlinx.coroutines.tasks.await
+import com.google.firebase.database.FirebaseDatabase
 
 class FirebaseRegistroUsuarioRepository(
+
     private val firebaseAuth: FirebaseAuth,
-    private val firebaseDataBase: FirebaseDataBase
+    private val firebaseDatabase: FirebaseDatabase
 ) : RegistroUsuarioRepository{
+
     override suspend fun registro(registroUsuario: RegistroUsuario): Boolean {
         val result = creaUsuarioEnFirebase(registroUsuario.email, registroUsuario.password)
         agregarNombreAFirebase(registroUsuario.nombre)
@@ -43,7 +50,7 @@ class FirebaseRegistroUsuarioRepository(
         direccion:String,
         comuna:String
     ){
-        val dataBase = firebaseDataBase.getReference("usuarios/${rut}")
+        val dataBase = firebaseDatabase.getReference("usuarios/${rut}")
         val registroUsuarioFirebase = RegistroUsuarioFirebase(
             nombre,
             rut,

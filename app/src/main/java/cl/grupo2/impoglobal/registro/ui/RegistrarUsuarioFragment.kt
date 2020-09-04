@@ -7,12 +7,15 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import cl.grupo2.impoglobal.R
 import cl.grupo2.impoglobal.databinding.FragmentRegistroUsuarioBinding
+import cl.grupo2.impoglobal.registro.data.remote.FirebaseRegistroUsuarioRepository
 import cl.grupo2.impoglobal.registro.domain.RegistrarUsuarioUseCase
 import cl.grupo2.impoglobal.registro.domain.RegistroUsuario
 import cl.grupo2.impoglobal.registro.presentation.RegistroUiState
 import cl.grupo2.impoglobal.registro.presentation.RegistroUsuarioViewModel
 import cl.grupo2.impoglobal.registro.presentation.RegistroViewModelFactory
 import cl.grupo2.impoglobal.registro.utils.extensions.*
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.fragment_registro_usuario.*
 
 class RegistrarUsuarioFragment : Fragment (R.layout.fragment_registro_usuario) {
