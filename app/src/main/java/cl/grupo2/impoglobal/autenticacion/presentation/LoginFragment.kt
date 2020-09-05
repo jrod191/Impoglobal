@@ -25,11 +25,11 @@ class LoginFragment : Fragment(R.layout.fragment_login){
 
     private fun setupListeners() {
         binding.apply {
-            //btnIngresar.setOnClickListener {
-               // Navigation.findNavController(it).navigate(R.id.action_loginUsuarioFragment_to_actividadUsuarioFragment)
-           // }
+            btnIngresar.setOnClickListener {
+                Navigation.findNavController(it).navigate(R.id.action_loginFragment_to_menuFragment)
+            }
             btnCrearUsuario.setOnClickListener {
-                Navigation.findNavController(it).navigate(R.id.action_loginFragment_to_registrarUsuarioFragment2)
+                Navigation.findNavController(it).navigate(R.id.action_loginFragment_to_registrarUsuarioFragment)
             }
         }
     }

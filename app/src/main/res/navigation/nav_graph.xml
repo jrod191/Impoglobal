@@ -6,7 +6,7 @@
     app:startDestination="@id/loginFragment">
 
     <fragment
-        android:id="@+id/registrarUsuarioFragment2"
+        android:id="@+id/registrarUsuarioFragment"
         android:name="cl.grupo2.impoglobal.registro.ui.RegistrarUsuarioFragment"
         android:label="RegistrarUsuarioFragment"
         tools:layout="@layout/fragment_registro_usuario"/>
@@ -17,7 +17,17 @@
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login">
         <action
-            android:id="@+id/action_loginFragment_to_registrarUsuarioFragment2"
-            app:destination="@id/registrarUsuarioFragment2" />
+            android:id="@+id/action_loginFragment_to_registrarUsuarioFragment"
+            app:destination="@id/registrarUsuarioFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="cl.grupo2.impoglobal.menu.presentation.MenuFragment"
+        android:label="MenuFragment"
+        tools:layout="@layout/fragment_menu"/>
+
 </navigation>
