@@ -7,7 +7,8 @@ sealed class LoginUiState (
     open val error: Throwable? = null
 ){
     object Loading : LoginUiState()
+    object ContrasenaIncorrecta : LoginUiState()
     data class Success (override val result: UserAuth?) : LoginUiState(result = result)
     data class Error (override val error: Throwable?) : LoginUiState(error = error)
-    object InvalidUser : LoginUiState()
+
 }
