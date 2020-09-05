@@ -11,8 +11,6 @@ import kotlinx.android.synthetic.main.fragment_menu.view.*
 
 class MenuFragment : Fragment (R.layout.fragment_menu) {
 
-    private lateinit var viewModel: MenuViewModel
-    private lateinit var viewModelFactory: MenuViewModelFactory
     private lateinit var binding: FragmentMenuBinding
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
