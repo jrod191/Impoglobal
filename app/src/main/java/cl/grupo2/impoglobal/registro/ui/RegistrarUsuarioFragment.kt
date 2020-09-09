@@ -103,7 +103,7 @@ class RegistrarUsuarioFragment : Fragment (R.layout.fragment_registro_usuario) {
     }
 
     private fun showError() {
-        alert("Eror servidor")
+        alert("Error de servidor")
     }
 
     private fun showEmailRegistrado(){

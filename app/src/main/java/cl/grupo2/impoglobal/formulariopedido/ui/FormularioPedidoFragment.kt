@@ -7,6 +7,8 @@ import androidx.lifecycle.ViewModelProvider
 import cl.grupo2.impoglobal.R
 import cl.grupo2.impoglobal.databinding.FragmentFormularioBinding
 import cl.grupo2.impoglobal.databinding.FragmentRegistroUsuarioBinding
+import cl.grupo2.impoglobal.formulariopedido.data.remote.FirebaseFormularioPedidoRepository
+import cl.grupo2.impoglobal.formulariopedido.data.remote.FirebaseFormularioPedidoRepository
 import cl.grupo2.impoglobal.formulariopedido.domain.FormularioPedidoUseCase
 import cl.grupo2.impoglobal.formulariopedido.presentation.FormularioPedidoViewModel
 import cl.grupo2.impoglobal.formulariopedido.presentation.FormularioViewModelFactory
@@ -35,14 +37,14 @@ class FormularioPedidoFragment : Fragment (R.layout.fragment_formulario){
         viewModelFactory =
             FormularioViewModelFactory(
                 FormularioPedidoUseCase(
-                    FirebaseRegistroUsuarioRepository(
+                    FirebaseFormularioPedidoRepository(
                         FirebaseAuth.getInstance(),
                         FirebaseDatabase.getInstance()
                     )
                 )
             )
         viewModel =
-            ViewModelProvider(this,viewModelFactory).get(RegistroUsuarioViewModel::class.java)
+            ViewModelProvider(this,viewModelFactory).get(FormularioPedidoViewModel::class.java)
     }
 
     private fun setupLiveData() {
@@ -120,4 +122,5 @@ class FormularioPedidoFragment : Fragment (R.layout.fragment_formulario){
 
 
 }
-}
+
+

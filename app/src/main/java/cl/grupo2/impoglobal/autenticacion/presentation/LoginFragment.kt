@@ -9,13 +9,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import cl.grupo2.impoglobal.R
 import cl.grupo2.impoglobal.autenticacion.data.remote.FirebaseAutenticacionRepository
-import cl.grupo2.impoglobal.autenticacion.domain.AutenticacionRepository
 import cl.grupo2.impoglobal.autenticacion.domain.LoginUsuarioPassUseCase
 import cl.grupo2.impoglobal.autenticacion.domain.UserAuth
 import cl.grupo2.impoglobal.databinding.FragmentLoginBinding
-import cl.grupo2.impoglobal.menu.domain.MenuUseCase
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.fragment_login.*
 
 class LoginFragment : Fragment(R.layout.fragment_login){
 
@@ -80,12 +77,19 @@ class LoginFragment : Fragment(R.layout.fragment_login){
     private fun setupListeners() {
         binding.apply {
             btnIngresar.setOnClickListener {
-                Navigation.findNavController(it).navigate(R.id.action_loginFragment_to_menuFragment)
+                val email = etEmail.text.toString()
+                val clave = etClave.text.toString()
+                callLoginViewModel(email, clave)
             }
+
             btnCrearUsuario.setOnClickListener {
                 Navigation.findNavController(it).navigate(R.id.action_loginFragment_to_registrarUsuarioFragment)
             }
         }
+    }
+
+    private fun callLoginViewModel(email: String, clave: String){
+    loginViewModel.doLogin(email, clave)
     }
 
 }

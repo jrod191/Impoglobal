@@ -13,7 +13,6 @@ import kotlinx.coroutines.tasks.await
 
 class FirebaseFormularioPedidoRepository (
 
-    private val firebaseAuth: FirebaseAuth,
     private val firebaseDatabase: FirebaseDatabase
 ) : FormularioPedidoRepository {
 
@@ -31,8 +30,8 @@ class FirebaseFormularioPedidoRepository (
     }
 
     private suspend fun ingresarPedidoEnFirebase(solicitud: String, cantidad: String): AuthResult {
-        return firebaseAuth
-            .createUserWithSolicitudAndCantidad(solicitud, cantidad)
+        return firebaseDatabase
+            .crear(solicitud, cantidad)
             .await()
     }
 
@@ -46,12 +45,12 @@ class FirebaseFormularioPedidoRepository (
         user?.updateProfile(profileUpdates)?.await()
     }
 
-    private suspend fun agregarDatosPersonalesAFirebase(
-        nombre: String,
-        rut: String,
-        email: String,
-        direccion:String,
-        comuna:String
+    private suspend fun agregarInformacionPedidoAFirebase(
+        solicitud: String,
+        cantidad: String,
+        monto: Int,
+        caracteristicas:String,
+        imagen:String
     ){
         val dataBase = firebaseDatabase.getReference("usuarios/${rut}")
         val registroUsuarioFirebase = RegistroUsuarioFirebase(
@@ -66,4 +65,3 @@ class FirebaseFormularioPedidoRepository (
 
 
 }
-

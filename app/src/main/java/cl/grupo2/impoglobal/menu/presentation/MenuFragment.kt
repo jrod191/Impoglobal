@@ -26,9 +26,9 @@ class MenuFragment : Fragment (R.layout.fragment_menu) {
             //btnCatalogo.setOnClickListener {
             //Navigation.findNavController(it).navigate(R.id.action_loginFragment_to_menuFragment)
              //}
-            //btnPedidoPersonalizado.setOnClickListener {
-              //  Navigation.findNavController(it).navigate(R.id.action_loginFragment_to_menuFragment)
-            //}
+            btnPedidoPersonalizado.setOnClickListener {
+              Navigation.findNavController(it).navigate(R.id.action_menuFragment_to_formularioPedidoFragment)
+            }
 
             btnVolver.setOnClickListener {
                 activity?.onBackPressed()
