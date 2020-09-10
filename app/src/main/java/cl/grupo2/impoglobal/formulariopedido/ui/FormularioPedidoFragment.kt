@@ -7,8 +7,8 @@ import androidx.lifecycle.ViewModelProvider
 import cl.grupo2.impoglobal.R
 import cl.grupo2.impoglobal.databinding.FragmentFormularioBinding
 import cl.grupo2.impoglobal.databinding.FragmentRegistroUsuarioBinding
-import cl.grupo2.impoglobal.formulariopedido.data.remote.FirebaseFormularioPedidoRepository
-import cl.grupo2.impoglobal.formulariopedido.data.remote.FirebaseFormularioPedidoRepository
+//import cl.grupo2.impoglobal.formulariopedido.data.remote.FirebaseFormularioPedidoRepository
+//import cl.grupo2.impoglobal.formulariopedido.data.remote.FirebaseFormularioPedidoRepository
 import cl.grupo2.impoglobal.formulariopedido.domain.FormularioPedidoUseCase
 import cl.grupo2.impoglobal.formulariopedido.presentation.FormularioPedidoViewModel
 import cl.grupo2.impoglobal.formulariopedido.presentation.FormularioViewModelFactory
@@ -18,7 +18,7 @@ import cl.grupo2.impoglobal.registro.utils.extensions.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
-class FormularioPedidoFragment : Fragment (R.layout.fragment_formulario){
+/*class FormularioPedidoFragment : Fragment (R.layout.fragment_formulario){
 
 
     lateinit var binding: FragmentFormularioBinding
@@ -121,6 +121,6 @@ class FormularioPedidoFragment : Fragment (R.layout.fragment_formulario){
     }
 
 
-}
+}*/
 
 

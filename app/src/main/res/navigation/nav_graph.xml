@@ -37,6 +37,15 @@
         android:id="@+id/formularioPedidoFragment"
         android:name="cl.grupo2.impoglobal.formulariopedido.ui.FormularioPedidoFragment"
         android:label="FormularioPedidoFragment"
-        tools:layout="@layout/fragment_formulario"/>
+        tools:layout="@layout/fragment_formulario">
+        <action
+            android:id="@+id/action_formularioPedidoFragment_to_contactanosFragment"
+            app:destination="@id/contactanosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactanosFragment"
+        android:name="cl.grupo2.impoglobal.contactanos.presentation.ContactanosFragment"
+        android:label="ContactanosFragment"
+        tools:layout="@layout/fragment_contactanos"/>
 
 </navigation>

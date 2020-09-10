@@ -10,6 +10,9 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="20dp"
+        android:textColor="@color/cardview_dark_background"
+        android:textStyle="bold"
+        android:gravity="center"
         android:text="@string/tu_solicitud_ha_sido_ingresada_con_exito" />
 
     <TextView
@@ -17,12 +20,18 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginTop="40dp"
+        android:textColor="@color/cardview_dark_background"
+        android:textStyle="bold"
+        android:gravity="center"
         android:text="Ante dudas o consultas sobre tu solicitud, contactanos en:" />
 
     <TextView
         android:id="@+id/tv_numero"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/cardview_dark_background"
+        android:textStyle="bold"
+        android:gravity="center"
         android:text="contacto@impoglobal.cl o al +569 6601 4315" />
 
     <Button
