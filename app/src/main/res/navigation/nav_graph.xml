@@ -32,6 +32,9 @@
         <action
             android:id="@+id/action_menuFragment_to_formularioPedidoFragment"
             app:destination="@id/formularioPedidoFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_productosFragment"
+            app:destination="@id/productosFragment" />
     </fragment>
     <fragment
         android:id="@+id/formularioPedidoFragment"
@@ -47,5 +50,10 @@
         android:name="cl.grupo2.impoglobal.contactanos.presentation.ContactanosFragment"
         android:label="ContactanosFragment"
         tools:layout="@layout/fragment_contactanos"/>
+    <fragment
+        android:id="@+id/productosFragment"
+        android:name="cl.grupo2.impoglobal.productos.presentation.ProductosFragment"
+        android:label="ProductosFragment"
+        tools:layout="@layout/fragment_productos"/>
 
 </navigation>

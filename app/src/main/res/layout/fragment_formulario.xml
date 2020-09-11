@@ -60,11 +60,11 @@
         android:text="@string/ingresar_solicitud" />
 
     <Button
-        android:id="@+id/btn_cancelar"
+        android:id="@+id/btn_volver"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:backgroundTint="#689F38"
-        android:text="@string/cancelar1" />
+        android:text="@string/volver" />
 
 </LinearLayout>

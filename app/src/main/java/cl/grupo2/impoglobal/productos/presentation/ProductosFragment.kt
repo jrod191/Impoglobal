@@ -20,6 +20,7 @@ class ProductosFragment : Fragment(R.layout.fragment_productos) {
     private lateinit var viewModel: ProductosViewModel
     private lateinit var viewModelFactory: ProductosViewModelFactory
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupDependencies()

@@ -4,21 +4,20 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.Observer
+import androidx.navigation.Navigation
 import cl.grupo2.impoglobal.R
 import cl.grupo2.impoglobal.databinding.FragmentFormularioBinding
-import cl.grupo2.impoglobal.databinding.FragmentRegistroUsuarioBinding
-//import cl.grupo2.impoglobal.formulariopedido.data.remote.FirebaseFormularioPedidoRepository
-//import cl.grupo2.impoglobal.formulariopedido.data.remote.FirebaseFormularioPedidoRepository
+import cl.grupo2.impoglobal.formulariopedido.data.remote.FirebaseFormularioPedidoRepository
+import cl.grupo2.impoglobal.formulariopedido.domain.FormularioPedido
 import cl.grupo2.impoglobal.formulariopedido.domain.FormularioPedidoUseCase
 import cl.grupo2.impoglobal.formulariopedido.presentation.FormularioPedidoViewModel
 import cl.grupo2.impoglobal.formulariopedido.presentation.FormularioViewModelFactory
-import cl.grupo2.impoglobal.registro.data.remote.FirebaseRegistroUsuarioRepository
 
 import cl.grupo2.impoglobal.registro.utils.extensions.*
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 
-/*class FormularioPedidoFragment : Fragment (R.layout.fragment_formulario){
+class FormularioPedidoFragment : Fragment (R.layout.fragment_formulario){
 
 
     lateinit var binding: FragmentFormularioBinding
@@ -29,7 +28,7 @@ import com.google.firebase.database.FirebaseDatabase
         super.onViewCreated(view, savedInstanceState)
         setupDependencies()
         binding = FragmentFormularioBinding.bind(view)
-        setupLiveData()
+        //setupLiveData()
         setupListener()
     }
 
@@ -38,7 +37,6 @@ import com.google.firebase.database.FirebaseDatabase
             FormularioViewModelFactory(
                 FormularioPedidoUseCase(
                     FirebaseFormularioPedidoRepository(
-                        FirebaseAuth.getInstance(),
                         FirebaseDatabase.getInstance()
                     )
                 )
@@ -47,21 +45,21 @@ import com.google.firebase.database.FirebaseDatabase
             ViewModelProvider(this,viewModelFactory).get(FormularioPedidoViewModel::class.java)
     }
 
-    private fun setupLiveData() {
+    /*private fun setupLiveData() {
         viewModel.getLiveData().observe(
             viewLifecycleOwner,
             Observer { state ->
-                state?.let { handleState(it) }
-            }
-        )
-    }
+                state?.let { handleState(it) }*/
+           // }
+        //)
+   // }
 
     private fun setupListener() {
         binding.apply {
-            btnCrearUsuario1.setOnClickListener {
-                if (isAllValidInputs()) {
-                    viewModel.registrarUsuario(obtenerValoresDeEditText())
-                }
+            btnIngresarSolicitud.setOnClickListener {
+                Navigation.findNavController(it).navigate(R.id.action_formularioPedidoFragment_to_contactanosFragment)
+                    //viewModel.registrarUsuario(obtenerValoresDeEditText())
+
             }
 
             btnVolver.setOnClickListener {
@@ -70,31 +68,31 @@ import com.google.firebase.database.FirebaseDatabase
         }
     }
 
-    private fun isAllValidInputs(): Boolean {
+    /*private fun isAllValidInputs(): Boolean {
         binding.apply {
-            return etPass.isValidPassInput("Ingrese contraseña con 6 caracteres") ||
-                    etEmail.isValidEmailInput("Ingrese un correo valido") ||
-                    etRut.isValidRutInput("Ingrese un rut valido") ||
-                    etNombre.isValidNameInput("Ingrese un nombre valido") ||
-                    etComuna.isValidComunaInput("Ingrese una comuna valida") ||
-                    etDireccion.isValidDireccionInput("Ingrese una direccion valida")
+            return etSolicitud.isValidNameInput("Ingrese una solicitud valida") ||
+                    etCantidadAPedir.isValidNumberInput("Ingrese cantidad valida")
+                    /*etMontoEnPesos.isValidNumberInput("Ingrese monto valido") ||
+                    etDetallesProductos.isValidNameInput("Ingrese un nombre valido") ||
+                    etLink.isValidNameInput("Ingrese una comuna valida")*/
+
         }
     }
 
-    private fun obtenerValoresDeEditText(): RegistroUsuario {
+    private fun obtenerValoresDeEditText(): FormularioPedido {
         binding.apply {
-            return RegistroUsuario(
-                etNombre.text.toString(),
-                etRut.text.toString(),
-                etDireccion.text.toString(),
-                etComuna.text.toString(),
-                etEmail.text.toString(),
-                etPass.text.toString()
+            return FormularioPedido(
+                etSolicitud.text.toString(),
+                etCantidadAPedir.text.toString()
+                /*etMontoEnPesos.text.toString(),
+                etDetallesProductos.text.toString(),
+                etLink.text.toString()*/
+
             )
         }
     }
 
-    private fun handleState(state: RegistroUiState){
+       private fun handleState(state: RegistroUiState){
         when (state) {
             is RegistroUiState.LoadingRegistroUiState -> showLoading()
             is RegistroUiState.SuccessRegistroUiState -> showRegistroExitoso()
@@ -118,9 +116,9 @@ import com.google.firebase.database.FirebaseDatabase
 
     private fun showLoading(){
         alert("Cargando")
-    }
+    }*/
 
 
-}*/
+}
 
 

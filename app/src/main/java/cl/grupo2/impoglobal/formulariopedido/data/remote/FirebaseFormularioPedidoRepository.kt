@@ -10,9 +10,25 @@ import com.google.firebase.auth.UserProfileChangeRequest
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.coroutines.tasks.await
 
-/*class FirebaseFormularioPedidoRepository (
+class FirebaseFormularioPedidoRepository (
 
     private val firebaseDatabase: FirebaseDatabase
+) :FormularioPedidoRepository {
+
+    override suspend fun formulario(formularioPedido: FormularioPedido): Boolean {
+
+        val database = firebaseDatabase.getReference("pedidos/${formularioPedido.solicitud}")
+
+        database.setValue(formularioPedido).await()
+
+        return true
+
+    }
+
+
+
+
+    /*private val firebaseDatabase: FirebaseDatabase
 ) : FormularioPedidoRepository {
 
     override suspend fun formulario(formularioPedido: FormularioPedido): Boolean {
@@ -79,7 +95,7 @@ import kotlinx.coroutines.tasks.await
             comuna
         )
         dataBase.setValue(registroUsuarioFirebase).await()
-    }
+    }*/
 
 
-}*/
+}

@@ -1,10 +1,7 @@
 package cl.grupo2.impoglobal.registro.utils.extensions
 
 import androidx.appcompat.widget.AppCompatEditText
-import cl.grupo2.impoglobal.registro.utils.validator.EmailValidator
-import cl.grupo2.impoglobal.registro.utils.validator.NameValidator
-import cl.grupo2.impoglobal.registro.utils.validator.PassValidator
-import cl.grupo2.impoglobal.registro.utils.validator.RutValidator
+import cl.grupo2.impoglobal.registro.utils.validator.*
 
 
 fun AppCompatEditText.isValidNameInput(message: String) : Boolean{
@@ -54,6 +51,15 @@ fun AppCompatEditText.isValidDireccionInput(message: String) : Boolean{
 
 fun AppCompatEditText.isValidComunaInput(message: String) : Boolean{
     val result = RutValidator.validate(text.toString())
+    if(!result){
+        error = message
+        requestFocus()
+    }
+    return result
+}
+
+fun AppCompatEditText.isValidNumberInput(message: String) : Boolean{
+    val result = NumberValidator.validate(text.toString())
     if(!result){
         error = message
         requestFocus()
