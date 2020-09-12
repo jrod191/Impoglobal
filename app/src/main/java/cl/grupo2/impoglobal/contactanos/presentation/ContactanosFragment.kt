@@ -22,6 +22,7 @@ class ContactanosFragment : Fragment (R.layout.fragment_contactanos){
         binding.apply {
 
             btnFinalizar.setOnClickListener {
+                activity?.finish()
 
             }
         }
