@@ -8,12 +8,12 @@ class RemoteProductosRepository (
     private val productosApi: ProductosApi,
     private val productoMapper: ProductoMapper) : ProductosRepository {
 
-    override suspend fun obtenerProductos(): Productos {
+    override fun obtenerProductos(): List<ProductoModel> {
         val productos = productosApi.getProductos()
 
         val listaCompleta=
             productos.map { productoMapper.mapToEntity(it) } ?: emptyList()
 
-        return Productos(listaCompleta)
+        return productosApi.getProductos()
     }
 }

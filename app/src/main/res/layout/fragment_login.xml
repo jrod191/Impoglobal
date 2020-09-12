@@ -29,6 +29,7 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/ingrese_password"
+        android:password="true"
         android:layout_marginTop="50dp"/>
 
     <androidx.appcompat.widget.AppCompatCheckBox
