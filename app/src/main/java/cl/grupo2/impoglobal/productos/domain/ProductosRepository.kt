@@ -1,5 +1,7 @@
 package cl.grupo2.impoglobal.productos.domain
 
+import io.reactivex.Single
+
 interface ProductosRepository {
-    suspend fun obtenerProductos() : Productos
+     fun obtenerProductos() : Single <List<Productos>>
 }
