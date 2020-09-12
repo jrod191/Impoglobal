@@ -28,7 +28,7 @@ class ProductosFragment : Fragment(R.layout.fragment_productos) {
         setupLiveData()
     }
 
-    private fun setupDependencies(){
+    private fun setupDependencies() {
         viewModelFactory = ProductosViewModelFactory(
             ObtenerProductosUseCase(
                 RemoteProductosRepository(
@@ -38,12 +38,12 @@ class ProductosFragment : Fragment(R.layout.fragment_productos) {
             )
         )
 
-        viewModel = ViewModelProvider(this,viewModelFactory).get(ProductosViewModel::class.java)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(ProductosViewModel::class.java)
 
 
     }
 
-    private fun setupLiveData () {
+    private fun setupLiveData() {
         viewModel.getLiveData().observe(
             viewLifecycleOwner,
             Observer { state -> state?.let { handleState(it) } }
@@ -52,33 +52,33 @@ class ProductosFragment : Fragment(R.layout.fragment_productos) {
     }
 
     private fun handleState(state: ProductosState) {
-        when (state){
+        when (state) {
             is ProductosState.LoadingProductosState -> showLoading()
             is ProductosState.LoadProductosState -> loadProductos(state.result)
-            is ProductosState.EmptyListProductosState ->showEmptyList()
-            is ProductosState.ErrorServerProductosState ->showErrorServer()
+            is ProductosState.EmptyListProductosState -> showEmptyList()
+            is ProductosState.ErrorServerProductosState -> showErrorServer()
             is ProductosState.NotInternetProductosState -> showSinInternetMessage()
         }
     }
 
-    private fun showSinInternetMessage(){
+    private fun showSinInternetMessage() {
 
     }
 
-    private fun showErrorServer(){
+    private fun showErrorServer() {
 
     }
 
-    private fun showEmptyList(){
+    private fun showEmptyList() {
 
     }
 
-    private fun showLoading(){
+    private fun showLoading() {
 
     }
 
-    private fun loadProductos(result: Productos){
-        Toast.makeText(context,"result ${result.result.size}", Toast.LENGTH_SHORT).show()
+    private fun loadProductos(result: Productos) {
+        Toast.makeText(context, "result ${result.result.size}", Toast.LENGTH_SHORT).show()
 
     }
 

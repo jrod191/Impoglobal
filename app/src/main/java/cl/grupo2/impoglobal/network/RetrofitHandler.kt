@@ -20,7 +20,7 @@ object RetrofitHandler {
             .create()
 
         return Retrofit.Builder()
-            .baseUrl("http://192.168.0.8:3000/")
+            .baseUrl("http://192.168.0.13:3000/")
             .client(client)
             .addConverterFactory(GsonConverterFactory.create(gson))
             //.addCallAdapterFactory(RxJava2CallAdapterFactory.create())

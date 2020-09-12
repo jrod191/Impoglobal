@@ -12,7 +12,7 @@ class RemoteProductosRepository (
         val productos = productosApi.getProductos()
 
         val listaCompleta=
-            productos.productos?.map { productoMapper.mapToEntity(it) } ?: emptyList()
+            productos.map { productoMapper.mapToEntity(it) } ?: emptyList()
 
         return Productos(listaCompleta)
     }

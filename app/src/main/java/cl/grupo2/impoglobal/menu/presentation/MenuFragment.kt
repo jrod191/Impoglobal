@@ -24,7 +24,7 @@ class MenuFragment : Fragment (R.layout.fragment_menu) {
         binding.apply {
 
             btnCatalogo.setOnClickListener {
-            Navigation.findNavController(it).navigate(R.id.action_loginFragment_to_menuFragment)
+            Navigation.findNavController(it).navigate(R.id.action_menuFragment_to_productosFragment)
              }
             btnPedidoPersonalizado.setOnClickListener {
               Navigation.findNavController(it).navigate(R.id.action_menuFragment_to_formularioPedidoFragment)
