@@ -5,10 +5,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import cl.grupo2.impoglobal.productos.domain.ObtenerProductosUseCase
 import cl.grupo2.impoglobal.productos.domain.Productos
+import cl.grupo2.impoglobal.productos.domain.model.Producto
 import cl.grupo2.impoglobal.productos.presentation.ProductosState.LoadingProductosState
-import cl.grupo2.impoglobal.productos.presentation.ProductosState.LoadProductosState
 import cl.grupo2.impoglobal.productos.presentation.ProductosState.EmptyListProductosState
 import kotlinx.coroutines.launch
+import java.lang.Exception
 import java.net.CacheResponse
 
 class ProductosViewModel (
@@ -20,20 +21,26 @@ class ProductosViewModel (
     fun getLiveData() = liveData
 
     fun obtenerProductos(){
-        liveData.postValue(LoadingProductosState)
+        liveData.postValue(ProductosState.LoadingProductosState)
         viewModelScope.launch {
-            val response = obtenerProductosUseCase.execute()
-            handleResponse(response)
-        }
-    }
-
-    private fun handleResponse(response: Productos){
-        response.result.let {
-            if(it.isNotEmpty()){
-                liveData.postValue(LoadProductosState(response))
-            }else{
-                liveData.postValue(EmptyListProductosState)
+            try {
+            val result = obtenerProductosUseCase.execute()
+            handleResult(result)
+        }catch (e: Exception){
+            handleError(e)
             }
         }
     }
-}
+
+    private fun handleError(e: Exception) {
+        liveData.postValue(ProductosState.ErrorServerProductosState)
+    }
+
+     private fun handleResult(result: List<Producto>) {
+        if(result.isEmpty()){
+                liveData.postValue(ProductosState.EmptyListProductosState)
+            }else{
+                liveData.postValue(ProductosState.Success(result))
+            }
+        }
+    }

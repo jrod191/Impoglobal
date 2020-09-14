@@ -6,6 +6,6 @@ data class ProductoModel (
 
     @SerializedName ("id") val id: Int,
     @SerializedName  ("nombre") val nombre: String,
-    @SerializedName  ("valor") val valor: Int,
+    @SerializedName  ("valor") val valor: String,
     @SerializedName  ("codigo") val codigo: String
 )

@@ -1,7 +1,8 @@
 package cl.grupo2.impoglobal.productos.domain
 
 class ObtenerProductosUseCase (
-    private val productosRepository: ProductosRepository
+    private val repository: ProductosRepository
 ) {
-   fun execute() = productosRepository.obtenerProductos()
+    suspend fun execute() = repository.getAll()
+   /*fun execute() = productosRepository.obtenerProductos()*/
 }

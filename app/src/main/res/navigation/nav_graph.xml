@@ -52,7 +52,7 @@
         tools:layout="@layout/fragment_contactanos"/>
     <fragment
         android:id="@+id/productosFragment"
-        android:name="cl.grupo2.impoglobal.productos.presentation.ProductosFragment"
+        android:name="cl.grupo2.impoglobal.recyclerview.ProductosFragment"
         android:label="ProductosFragment"
         tools:layout="@layout/fragment_productos"/>
 

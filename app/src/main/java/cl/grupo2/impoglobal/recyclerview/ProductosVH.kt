@@ -5,24 +5,22 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import cl.grupo2.impoglobal.R
-import cl.grupo2.impoglobal.productos.domain.Producto
-import cl.grupo2.impoglobal.productos.domain.Productos
+import cl.grupo2.impoglobal.databinding.CardviewBinding
+import cl.grupo2.impoglobal.productos.domain.model.Producto
+import okhttp3.internal.notifyAll
 
-class ProductosVH (view : View, private val productoItemListener: ProductoItemListener) :
-        RecyclerView.ViewHolder(view) {
+class ProductosVH(
+    private val binding: CardviewBinding,
+    private val onItemClickProducto: OnItemClickProducto
+) : RecyclerView.ViewHolder(binding.root) {
 
-    private val tvNombre = view.findViewById<TextView>(R.id.tvNombre)
-    private val tvValor = view.findViewById<TextView>(R.id.tvValor)
-    private val tvCodigo = view.findViewById<TextView>(R.id.tvCodigo)
-    private val cvProductos = view.findViewById<CardView>(R.id.tvCodigo)
-
-    fun bind (producto: Producto){
-        tvNombre.text = Producto.nombre
-        tvValor.text = Producto.valor
-        tvCodigo.text = Producto.codigo
-        cvProductos.setOnClickListener { productoItemListener?.onProductoItemClick(producto) }
-
-
+    fun bind(producto: Producto) {
+        binding.apply {
+            tvNombre.text = producto.nombre
+            if (producto.nombre.isNotEmpty()) {
+            }
+        }
+        onItemClickProducto.onItemCLickProducto(producto)
     }
 }
 
