@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import cl.grupo2.impoglobal.R
-import cl.grupo2.impoglobal.databinding.CardviewBinding
+import cl.grupo2.impoglobal.databinding.ItemProductosBinding
 import cl.grupo2.impoglobal.productos.domain.model.Producto
 
 class ProductoAdapter(
@@ -14,7 +14,7 @@ class ProductoAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductosVH {
         val inflate = LayoutInflater.from(parent.context)
-        val binding = CardviewBinding.inflate(inflate,parent, false)
+        val binding = ItemProductosBinding.inflate(inflate,parent, false)
         return ProductosVH(binding, itemClickProducto)
     }
 

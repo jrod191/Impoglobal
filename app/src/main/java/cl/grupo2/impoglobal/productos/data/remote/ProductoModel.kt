@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 data class ProductoModel (
 
     @SerializedName ("id") val id: Int,
-    @SerializedName  ("nombre") val nombre: String,
-    @SerializedName  ("valor") val valor: String,
-    @SerializedName  ("codigo") val codigo: String
+    @SerializedName  ("Nombre") val nombre: String,
+    @SerializedName  ("Valor") val valor: String,
+    @SerializedName  ("Codigo") val codigo: String
 )

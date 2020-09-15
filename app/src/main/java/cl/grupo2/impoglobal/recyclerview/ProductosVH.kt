@@ -5,19 +5,23 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import cl.grupo2.impoglobal.R
-import cl.grupo2.impoglobal.databinding.CardviewBinding
+import cl.grupo2.impoglobal.databinding.ItemProductosBinding
 import cl.grupo2.impoglobal.productos.domain.model.Producto
+import com.squareup.picasso.Picasso
 import okhttp3.internal.notifyAll
 
 class ProductosVH(
-    private val binding: CardviewBinding,
+    private val binding: ItemProductosBinding,
     private val onItemClickProducto: OnItemClickProducto
 ) : RecyclerView.ViewHolder(binding.root) {
 
     fun bind(producto: Producto) {
         binding.apply {
             tvNombre.text = producto.nombre
-            if (producto.nombre.isNotEmpty()) {
+            tvValor.text = producto.valor
+            tvCodigo.text = producto.codigo
+            if (producto.imagen.isNotEmpty()) {
+                Picasso.get().load(producto.imagen).into(ivProducto)
             }
         }
         onItemClickProducto.onItemCLickProducto(producto)
