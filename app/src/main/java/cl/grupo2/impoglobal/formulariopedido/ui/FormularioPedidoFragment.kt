@@ -59,7 +59,6 @@ class FormularioPedidoFragment : Fragment (R.layout.fragment_formulario){
             btnIngresarSolicitud.setOnClickListener {
                 Navigation.findNavController(it).navigate(R.id.action_formularioPedidoFragment_to_contactanosFragment)
                     //viewModel.registrarUsuario(obtenerValoresDeEditText())
-
             }
 
             btnVolver.setOnClickListener {
