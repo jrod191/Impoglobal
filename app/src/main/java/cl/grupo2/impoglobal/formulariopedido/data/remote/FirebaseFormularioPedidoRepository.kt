@@ -16,12 +16,10 @@ class FirebaseFormularioPedidoRepository (
 ) :FormularioPedidoRepository {
 
     override suspend fun formulario(formularioPedido: FormularioPedido): Boolean {
-
         val database = firebaseDatabase.getReference("pedidos/${formularioPedido.solicitud}")
-
         database.setValue(formularioPedido).await()
 
-        return true
+        return formulario(formularioPedido)
 
     }
 

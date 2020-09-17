@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cvProductos"
-    android:layout_width="400dp"
+    android:layout_width="match_parent"
     android:layout_height="450dp"
     android:layout_margin="10dp"
     android:backgroundTint="#FFFFFF">
@@ -11,7 +11,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
 
         <ImageView
             android:id="@+id/iv_producto"
@@ -64,8 +63,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvValor"
             app:layout_constraintVertical_bias="0.6" />
-
-
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
