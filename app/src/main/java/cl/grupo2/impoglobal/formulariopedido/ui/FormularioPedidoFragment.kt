@@ -17,7 +17,7 @@ import cl.grupo2.impoglobal.formulariopedido.presentation.FormularioViewModelFac
 import cl.grupo2.impoglobal.registro.utils.extensions.*
 import com.google.firebase.database.FirebaseDatabase
 
-class FormularioPedidoFragment : Fragment (R.layout.fragment_formulario){
+class FormularioPedidoFragment : Fragment(R.layout.fragment_formulario) {
 
 
     lateinit var binding: FragmentFormularioBinding
@@ -32,7 +32,7 @@ class FormularioPedidoFragment : Fragment (R.layout.fragment_formulario){
         setupListener()
     }
 
-    private fun setupDependencies(){
+    private fun setupDependencies() {
         viewModelFactory =
             FormularioViewModelFactory(
                 FormularioPedidoUseCase(
@@ -42,7 +42,7 @@ class FormularioPedidoFragment : Fragment (R.layout.fragment_formulario){
                 )
             )
         viewModel =
-            ViewModelProvider(this,viewModelFactory).get(FormularioPedidoViewModel::class.java)
+            ViewModelProvider(this, viewModelFactory).get(FormularioPedidoViewModel::class.java)
     }
 
     /*private fun setupLiveData() {
@@ -50,15 +50,16 @@ class FormularioPedidoFragment : Fragment (R.layout.fragment_formulario){
             viewLifecycleOwner,
             Observer { state ->
                 state?.let { handleState(it) }*/
-           // }
-        //)
-   // }
+    // }
+    //)
+    // }
 
     private fun setupListener() {
         binding.apply {
             btnIngresarSolicitud.setOnClickListener {
-                Navigation.findNavController(it).navigate(R.id.action_formularioPedidoFragment_to_contactanosFragment)
-                    //viewModel.registrarUsuario(obtenerValoresDeEditText())
+                Navigation.findNavController(it)
+                    .navigate(R.id.action_formularioPedidoFragment_to_contactanosFragment)
+                //viewModel.registrarUsuario(obtenerValoresDeEditText())
             }
 
             btnVolver.setOnClickListener {

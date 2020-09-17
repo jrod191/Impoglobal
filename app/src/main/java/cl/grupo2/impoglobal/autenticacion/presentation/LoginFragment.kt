@@ -14,15 +14,14 @@ import cl.grupo2.impoglobal.autenticacion.domain.UserAuth
 import cl.grupo2.impoglobal.databinding.FragmentLoginBinding
 import com.google.firebase.auth.FirebaseAuth
 
-class LoginFragment : Fragment(R.layout.fragment_login){
+
+class LoginFragment : Fragment(R.layout.fragment_login) {
 
     private lateinit var binding: FragmentLoginBinding
     private lateinit var loginUsuarioPassUseCase: LoginUsuarioPassUseCase
     private lateinit var repository: FirebaseAutenticacionRepository
     private lateinit var loginViewModel: LoginViewModel
     private lateinit var loginViewModelFactory: LoginViewModelFactory
-
-
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -32,7 +31,7 @@ class LoginFragment : Fragment(R.layout.fragment_login){
         setupListeners()
     }
 
-    private fun setupLiveData(){
+    private fun setupLiveData() {
         loginViewModel.getLiveData().observe(
             viewLifecycleOwner,
             Observer { state ->
@@ -50,7 +49,7 @@ class LoginFragment : Fragment(R.layout.fragment_login){
         }
     }
 
-    private fun mostrarError(){
+    private fun mostrarError() {
         Toast.makeText(requireContext(), "Ha ocurrido un error", Toast.LENGTH_LONG).show()
     }
 
@@ -63,15 +62,16 @@ class LoginFragment : Fragment(R.layout.fragment_login){
         Toast.makeText(requireContext(), "Contraseña Incorrecta", Toast.LENGTH_LONG).show()
     }
 
-    private fun mostrarCargando (){
-        Toast.makeText(requireContext(),"Cargando", Toast.LENGTH_SHORT).show()
+    private fun mostrarCargando() {
+        Toast.makeText(requireContext(), "Cargando", Toast.LENGTH_SHORT).show()
     }
 
-    private fun setupDependencies(){
+    private fun setupDependencies() {
         repository = FirebaseAutenticacionRepository(FirebaseAuth.getInstance())
         loginUsuarioPassUseCase = LoginUsuarioPassUseCase(repository)
-        loginViewModelFactory = LoginViewModelFactory (loginUsuarioPassUseCase)
-        loginViewModel = ViewModelProvider(this, loginViewModelFactory).get(LoginViewModel::class.java)
+        loginViewModelFactory = LoginViewModelFactory(loginUsuarioPassUseCase)
+        loginViewModel =
+            ViewModelProvider(this, loginViewModelFactory).get(LoginViewModel::class.java)
     }
 
     private fun setupListeners() {
@@ -83,13 +83,14 @@ class LoginFragment : Fragment(R.layout.fragment_login){
             }
 
             btnCrearUsuario.setOnClickListener {
-                Navigation.findNavController(it).navigate(R.id.action_loginFragment_to_registrarUsuarioFragment)
+                Navigation.findNavController(it)
+                    .navigate(R.id.action_loginFragment_to_registrarUsuarioFragment)
             }
         }
     }
 
-    private fun callLoginViewModel(email: String, clave: String){
-    loginViewModel.doLogin(email, clave)
+    private fun callLoginViewModel(email: String, clave: String) {
+        loginViewModel.doLogin(email, clave)
     }
 
 }
