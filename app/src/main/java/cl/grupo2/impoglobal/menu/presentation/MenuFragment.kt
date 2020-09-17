@@ -31,7 +31,7 @@ class MenuFragment : Fragment (R.layout.fragment_menu) {
             }
 
             btnVolver.setOnClickListener {
-                activity?.onBackPressed()
+                Navigation.findNavController(it).navigate(R.id.action_menuFragment_to_loginFragment)
             }
         }
     }

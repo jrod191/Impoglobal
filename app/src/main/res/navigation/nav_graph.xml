@@ -35,6 +35,9 @@
         <action
             android:id="@+id/action_menuFragment_to_productosFragment"
             app:destination="@id/productosFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/formularioPedidoFragment"
